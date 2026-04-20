@@ -6,51 +6,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      max-width: 920px;
-      margin: auto;
-      padding: 30px;
-      line-height: 1.7;
-      color: #2d2d2d;
-      background-color: #f4f6f8;
+    :root {
+      --primary: #2563eb;
+      --dark: #1f2937;
+      --muted: #6b7280;
+      --bg: #f4f6fb;
+      --card: #ffffff;
     }
 
-    header {
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 20px;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
     }
 
     .container {
-        max-width: 900px;
-        margin: 60px auto;
-        background: #ffffff;
-        padding: 40px 50px;
-        border-radius: 8px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
     }
 
-    h1 {
-      margin-bottom: 5px;
-      color: #1f3a5f;
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+      margin-bottom: 80px;
     }
 
-    
-    h2 {
-        color: #1f3a5f;
-        margin-top: 40px;
-        border-bottom: 2px solid #e6e6e6;
-        padding-bottom: 6px;
+    .hero-content {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    .subtitle {
-      color: #555;
-      font-size: 1.1em;
-      margin-bottom: 15px;
+    .hero img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px solid rgba(255,255,255,0.7);
+      object-fit: cover;
+      background: white;
     }
 
+    .hero h1 {
+      margin: 0;
+      font-size: 2.8em;
+    }
+
+    .hero .subtitle {
+      font-size: 1.15em;
+      margin-top: 10px;
+      color: #dbeafe;
+    }
+
+    .hero-links {
+      margin-top: 20px;
+      font-size: 0.95em;
+    }
+
+    .hero-links a {
+      color: #e0f2fe;
+      text-decoration: none;
+      margin-right: 16px;
+      font-weight: 500;
+    }
+
+    .hero-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* SECTIONS */
     section {
-      margin-top: 40px;
+      margin-bottom: 80px;
+    }
+
+    section h2 {
+      font-size: 1.9em;
+      margin-bottom: 30px;
+      border-left: 6px solid var(--primary);
+      padding-left: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.07);
     }
 
     ul {
@@ -58,124 +109,151 @@
     }
 
     li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    a {
-      color: #0b66c3;
-      text-decoration: none;
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .links a {
-      margin-right: 15px;
+    .tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #1e40af;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.85em;
+      margin: 4px;
       font-weight: 500;
     }
 
     footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #e0e0e0;
+      text-align: center;
       font-size: 0.9em;
-      color: #666;
+      color: var(--muted);
+      margin-top: 80px;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Lucia Ghiretti</h1>
-  <p class="subtitle">
-    PhD Student at the Human Nutrition Unit<br>
-    University of Parma, Italy
-  </p>
+<div class="container">
 
-  <p>
-    📧 <a href="mailto:lucia.ghiretti@unipr.it">lucia.ghiretti@unipr.it</a>
-  </p>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <img src="profile.jpg" alt="Lucia Ghiretti">
 
-  <p class="links">
-    🔗 <a href="https://www.linkedin.com/in/lucia-ghiretti-227b241ab" target="_blank">LinkedIn</a>
-    🔗 <a href="https://orcid.org/0009-0004-3493-6875" target="_blank">ORCID</a>
-    📄 <a href="CV_Resume_ENG_nopic.pdf" target="_blank">CV (PDF)</a>
-  </p>
-</header>
+      <div>
+        <h1>Lucia Ghiretti</h1>
+        <p class="subtitle">
+          PhD Student · Human Nutrition & Bioinformatics<br>
+          University of Parma, Italy
+        </p>
 
-<section>
-  <h2>About me</h2>
-  <p>
-    My research focuses on the integration of multi-omics datasets to investigate
-    the role of dietary (poly)phenols in cardiometabolic health, with a particular
-    interest in precision nutrition and systems biology approaches.
-  </p>
-</section>
+        <div class="hero-links">
+          📧 <a href="mailto:lucia.ghiretti@unipr.it">Email</a>
+          🔗 <a href="https://www.linkedin.com/in/lucia-ghiretti-227b241ab" target="_blank">LinkedIn</a>
+          🧬 <a href="https://orcid.org/0009-0004-3493-6875" target="_blank">ORCID</a>
+          📄 <a href="CV_Resume_ENG_nopic.pdf" target="_blank">CV (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<section>
-  <h2>Research interests</h2>
-  <ul>
-    <li>Multi-omics data integration</li>
-    <li>(Poly)phenols</li>
-    <li>Cardiometabolic health</li>
-    <li>Precision nutrition</li>
-  </ul>
-</section>
+  <!-- ABOUT -->
+  <section>
+    <h2>About me</h2>
+    <div class="card">
+      <p>
+        I am a PhD student at the Human Nutrition Unit (University of Parma).
+        My research focuses on integrating multi-omics datasets to study
+        inter-individual variability in dietary (poly)phenol metabolism,
+        with the goal of advancing precision nutrition strategies for
+        cardiometabolic health.
+      </p>
+    </div>
+  </section>
 
-<section>
-  <h2>Technical skills</h2>
-  <ul>
-    <li><strong>R</strong> (RStudio)</li>
-    <li><strong>Python</strong></li>
-    <li><strong>Bash / Command line</strong></li>
-  </ul>
-</section>
+  <!-- INTERESTS -->
+  <section>
+    <h2>Research interests</h2>
+    <div class="card">
+      <div>
+        <span class="tag">Multi-omics integration</span>
+        <span class="tag">(Poly)phenols</span>
+        <span class="tag">Gut microbiota</span>
+        <span class="tag">Cardiometabolic health</span>
+        <span class="tag">Precision nutrition</span>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <h2>Education</h2>
-  <ul>
-    <li>
-      <strong>PhD in Human Nutrition</strong> (2024 – present)<br>
-      University of Parma, Italy<br>
-      Supervisor: Prof. Pedro Mena
-    </li>
-    <li>
-      <strong>MSc in Genomic, Molecular and Industrial Biotechnology</strong> (2021 – 2024)<br>
-      University of Parma, Italy
-    </li>
-    <li>
-      <strong>BSc in Biotechnology</strong> (2018 – 2021)<br>
-      University of Parma, Italy
-    </li>
-  </ul>
-</section>
+  <!-- SKILLS -->
+  <section>
+    <h2>Technical skills</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Programming</h3>
+        <ul>
+          <li>R (RStudio)</li>
+          <li>Python</li>
+          <li>Bash / Command line</li>
+        </ul>
+      </div>
 
-<section>
-  <h2>Selected publications</h2>
-  <ul>
-    <li>
-      Treccani M., <strong>Ghiretti L.</strong>, et al. (2025).
-      <em>A computational reference for human genomics analysis in (poly)phenol research.</em>
-      Food & Function.
-    </li>
-    <li>
-      Ma Y., <strong>Ghiretti L.</strong>, et al. (2025).
-      <em>Static and dynamic in vitro colonic models reveal the spatiotemporal production of flavan-3-ol catabolites.</em>
-      Free Radical Biology & Medicine.
-    </li>
-  </ul>
-</section>
+      <div class="card">
+        <h3>Data & Methods</h3>
+        <ul>
+          <li>Multi-omics integration</li>
+          <li>Metabolomics data analysis</li>
+          <li>Basic HPC usage</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <p>
-    Member of the International Society for Computational Biology (ISCB)<br>
-    Member of ISCB Regional Student Group Italy (RSG-Italy)<br>
-    ISCB Student Council – Web Manager for the BioinfoBridges podcast
-  </p>
-</footer>
+  <!-- EDUCATION -->
+  <section>
+    <h2>Education</h2>
+    <div class="card">
+      <ul>
+        <li><strong>PhD in Human Nutrition</strong> (2024 – present) – University of Parma</li>
+        <li><strong>MSc in Genomic, Molecular and Industrial Biotechnology</strong> (2021 – 2024)</li>
+        <li><strong>BSc in Biotechnology</strong> (2018 – 2021)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section>
+    <h2>Selected publications</h2>
+    <div class="card">
+      <ul>
+        <li>
+          Treccani M., <strong>Ghiretti L.</strong>, et al. (2025).
+          <em>A computational reference for human genomics analysis in (poly)phenol research.</em>
+          Food & Function.
+        </li>
+        <li>
+          Ma Y., <strong>Ghiretti L.</strong>, et al. (2025).
+          <em>Static and dynamic in vitro colonic models reveal the spatiotemporal production of flavan-3-ol catabolites.</em>
+          Free Radical Biology & Medicine.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    ISCB · RSG‑Italy · ISCB Student Council – BioinfoBridges (Web Manager)
+  </footer>
+
+</div>
 
 </body>
 </html>
-``
