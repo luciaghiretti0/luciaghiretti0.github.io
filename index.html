@@ -7,11 +7,13 @@
 
   <style>
     :root {
-      --primary: #2563eb;
-      --dark: #1f2937;
-      --muted: #6b7280;
-      --bg: #f4f6fb;
-      --card: #ffffff;
+      --bg: #0b0f19;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --primary: #60a5fa;
+      --accent: #38bdf8;
+      --border: #1f2937;
     }
 
     * {
@@ -20,26 +22,26 @@
 
     body {
       margin: 0;
-      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--dark);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #111827, #020617);
+      color: var(--text);
       line-height: 1.7;
     }
 
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 70px 20px 100px;
     }
 
     /* HERO */
     .hero {
-      background: linear-gradient(135deg, #1e3a8a, #2563eb);
-      color: white;
-      border-radius: 20px;
+      background: linear-gradient(135deg, #020617, #111827);
+      border: 1px solid var(--border);
+      border-radius: 22px;
       padding: 50px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.15);
-      margin-bottom: 80px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+      margin-bottom: 90px;
     }
 
     .hero-content {
@@ -50,23 +52,27 @@
     }
 
     .hero img {
-      width: 200px;
-      height: 200px;
+      width: 190px;
+      height: 190px;
       border-radius: 50%;
-      border: 5px solid rgba(255,255,255,0.7);
       object-fit: cover;
-      background: white;
+      border: 3px solid var(--primary);
+      transition: transform 0.4s ease;
     }
 
-    .hero h1 {
+    .hero img:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
       margin: 0;
       font-size: 2.8em;
+      color: white;
     }
 
-    .hero .subtitle {
-      font-size: 1.15em;
+    .subtitle {
       margin-top: 10px;
-      color: #dbeafe;
+      color: var(--muted);
     }
 
     .hero-links {
@@ -75,9 +81,9 @@
     }
 
     .hero-links a {
-      color: #e0f2fe;
+      color: var(--accent);
       text-decoration: none;
-      margin-right: 16px;
+      margin-right: 18px;
       font-weight: 500;
     }
 
@@ -87,21 +93,57 @@
 
     /* SECTIONS */
     section {
-      margin-bottom: 80px;
+      margin-bottom: 90px;
     }
 
-    section h2 {
-      font-size: 1.9em;
+    h2 {
+      font-size: 1.8em;
       margin-bottom: 30px;
-      border-left: 6px solid var(--primary);
-      padding-left: 14px;
+      border-left: 5px solid var(--primary);
+      padding-left: 16px;
     }
 
     .card {
       background: var(--card);
-      border-radius: 20px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
       padding: 36px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+    }
+
+    /* TAGS */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tag {
+      background: linear-gradient(135deg, #0ea5e9, #2563eb);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85em;
+      font-weight: 600;
+      transition: transform 0.25s ease;
+      cursor: default;
+    }
+
+    .tag:hover {
+      transform: scale(1.1);
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
     }
 
     ul {
@@ -112,29 +154,11 @@
       margin-bottom: 10px;
     }
 
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #eef2ff;
-      color: #1e40af;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.85em;
-      margin: 4px;
-      font-weight: 500;
-    }
-
     footer {
       text-align: center;
       font-size: 0.9em;
       color: var(--muted);
-      margin-top: 80px;
+      margin-top: 100px;
     }
   </style>
 </head>
@@ -152,14 +176,14 @@
         <h1>Lucia Ghiretti</h1>
         <p class="subtitle">
           PhD Student · Human Nutrition & Bioinformatics<br>
-          University of Parma, Italy
+          University of Parma
         </p>
 
         <div class="hero-links">
-          📧 <a href="mailto:lucia.ghiretti@unipr.it">Email</a>
-          🔗 <a href="https://www.linkedin.com/in/lucia-ghiretti-227b241ab" target="_blank">LinkedIn</a>
-          🧬 <a href="https://orcid.org/0009-0004-3493-6875" target="_blank">ORCID</a>
-          📄 <a href="CV_Resume_ENG_nopic.pdf" target="_blank">CV (PDF)</a>
+          <a href="mailto:lucia.ghiretti@unipr.it">Email</a>
+          <a href="https://www.linkedin.com/in/lucia-ghiretti-227b241ab" target="_blank">LinkedIn</a>
+          <a href="https://orcid.org/0009-0004-3493-6875" target="_blank">ORCID</a>
+          <a href="CV_Resume_ENG_nopic.pdf" target="_blank">CV (PDF)</a>
         </div>
       </div>
     </div>
@@ -171,10 +195,9 @@
     <div class="card">
       <p>
         I am a PhD student at the Human Nutrition Unit (University of Parma).
-        My research focuses on integrating multi-omics datasets to study
-        inter-individual variability in dietary (poly)phenol metabolism,
-        with the goal of advancing precision nutrition strategies for
-        cardiometabolic health.
+        My work focuses on integrating multi-omics datasets to study inter-individual
+        variability in dietary (poly)phenol metabolism, bridging bioinformatics,
+        metabolomics, and precision nutrition to understand cardiometabolic health.
       </p>
     </div>
   </section>
@@ -183,8 +206,8 @@
   <section>
     <h2>Research interests</h2>
     <div class="card">
-      <div>
-        <span class="tag">Multi-omics integration</span>
+      <div class="tags">
+        <span class="tag">Multi-omics</span>
         <span class="tag">(Poly)phenols</span>
         <span class="tag">Gut microbiota</span>
         <span class="tag">Cardiometabolic health</span>
@@ -207,10 +230,10 @@
       </div>
 
       <div class="card">
-        <h3>Data & Methods</h3>
+        <h3>Data science</h3>
         <ul>
           <li>Multi-omics integration</li>
-          <li>Metabolomics data analysis</li>
+          <li>Metabolomics analysis</li>
           <li>Basic HPC usage</li>
         </ul>
       </div>
@@ -222,7 +245,7 @@
     <h2>Education</h2>
     <div class="card">
       <ul>
-        <li><strong>PhD in Human Nutrition</strong> (2024 – present) – University of Parma</li>
+        <li><strong>PhD in Human Nutrition</strong> (2024 – present), University of Parma</li>
         <li><strong>MSc in Genomic, Molecular and Industrial Biotechnology</strong> (2021 – 2024)</li>
         <li><strong>BSc in Biotechnology</strong> (2018 – 2021)</li>
       </ul>
@@ -235,20 +258,19 @@
     <div class="card">
       <ul>
         <li>
-          Treccani M., <strong>Ghiretti L.</strong>, et al. (2025).
-          <em>A computational reference for human genomics analysis in (poly)phenol research.</em>
+          Treccani M., <strong>Ghiretti L.</strong>, et al. (2025).  
+          <em>A computational reference for human genomics analysis in (poly)phenol research.</em>  
           Food & Function.
         </li>
         <li>
-          Ma Y., <strong>Ghiretti L.</strong>, et al. (2025).
-          <em>Static and dynamic in vitro colonic models reveal the spatiotemporal production of flavan-3-ol catabolites.</em>
+          Ma Y., <strong>Ghiretti L.</strong>, et al. (2025).  
+          <em>Static and dynamic in vitro colonic models reveal the spatiotemporal production of flavan-3-ol catabolites.</em>  
           Free Radical Biology & Medicine.
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     ISCB · RSG‑Italy · ISCB Student Council – BioinfoBridges (Web Manager)
   </footer>
