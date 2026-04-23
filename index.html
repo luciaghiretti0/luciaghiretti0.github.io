@@ -119,10 +119,10 @@
 
     /* TAGS */
     .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
 
     .tag {
       background: linear-gradient(135deg, #0ea5e9, #2563eb);
@@ -218,7 +218,6 @@
      <section>
       <h2>Skills</h2>
       <div class="card">
-        <h3>Data science</h3>
         <ul>
           <li>Multi-omics integration</li>
           <li>Basic HPC usage</li>
@@ -263,11 +262,9 @@
    <section>
     <h2>Scientific networks</h2>
     <div class="card">
-      <div class="tags">
-        <span class="tag">ISCB</span>
-        <span class="tag">RSG‑Italy</span>
-        <span class="tag">ISCB‑SC, BioinfoBridges</span>
-      </div>
+        <span>ISCB</span>
+        <span>RSG‑Italy</span>
+        <span>ISCB‑SC, BioinfoBridges</span>
     </div>
   </section>
 
