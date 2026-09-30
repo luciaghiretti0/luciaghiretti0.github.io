@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="135" height="34" viewBox="0 0 135 34" fill="none">
+  <rect width="135" height="34" rx="6" fill="#0e4854"/>
+  <g transform="translate(16, 9)">
+    <svg width="16" height="16" viewBox="0 0 24 24">
+      <path fill="#ffffff" d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm6.93 6h-3.64a15.57 15.57 0 0 0-1.5-3.56A8.041 8.041 0 0 1 18.93 8zM12 4.07a13.9 13.9 0 0 1 1.9 3.93h-3.8A13.9 13.9 0 0 1 12 4.07zM4.26 14a8.1 8.1 0 0 1 0-4h3.9a17.2 17.2 0 0 0 0 4zm.81 2h3.64a15.57 15.57 0 0 0 1.5 3.56A8.041 8.041 0 0 1 5.07 16zm3.64-8H5.07a8.041 8.041 0 0 1 5.14-3.56A15.57 15.57 0 0 0 8.71 8zM12 19.93a13.9 13.9 0 0 1-1.9-3.93h3.8a13.9 13.9 0 0 1-1.9 3.93zm2.25-5.93h-4.5a15.3 15.3 0 0 1 0-4h4.5a15.3 15.3 0 0 1 0 4zm1.56 5.56A15.57 15.57 0 0 0 17.31 16h3.62a8.041 8.041 0 0 1-5.12 3.56zM15.84 14a17.2 17.2 0 0 0 0-4h3.9a8.1 8.1 0 0 1 0 4z"/>
+    </svg>
+  </g>
+  <text x="77" y="17" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" letter-spacing="0.2px" text-anchor="middle" dominant-baseline="central">Website</text>
+</svg>
